@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대회 신청 - 20기 골프대회</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>20기 골프대회</h1>
+    <p>대회 신청 및 참가 관리</p>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="login.html">로그인</a>
+    <a href="tournament.html" class="active">대회신청</a>
+    <a href="about.html">운영진소개</a>
+  </nav>
+
+  <main>
+    <div class="container">
+      <!-- 사용자 정보 -->
+      <section id="userInfo" class="hidden">
+        <div style="text-align: center;">
+          <p style="font-size: 1.2em;">
+            <strong id="currentUserName"></strong>님 (<span id="currentUserClass"></span>기)
+          </p>
+        </div>
+      </section>
+
+      <!-- 알림 -->
+      <div id="alert" class="alert"></div>
+
+      <!-- 대회 목록 -->
+      <section>
+        <h2>예정된 대회</h2>
+        <p class="text-center">참가하고 싶은 대회를 선택하세요</p>
+
+        <div id="tournamentList" style="margin-top: 2em;">
+          <div class="spinner"></div>
+        </div>
+      </section>
+
+      <!-- 내 신청 내역 -->
+      <section>
+        <h2>내 신청 내역</h2>
+        <div id="myRegistrations">
+          <p class="text-center">로그인 후 신청 내역을 확인할 수 있습니다.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 고교 20기 골프대회 추진위원회</p>
+    <p>문의: golf20@example.com</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase 설정 -->
+  <script src="js/firebase-config.js"></script>
+
+  <!-- 인증 로직 -->
+  <script src="js/auth.js"></script>
+
+  <!-- 대회 신청 로직 -->
+  <script src="js/tournament.js"></script>
+</body>
+</html>

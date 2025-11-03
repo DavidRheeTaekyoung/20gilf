@@ -1,93 +1,164 @@
-<!DOCTYPE html><html lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>20기 골프대회 2026</title>
-  <style>
-    body {
-      font-family: 'Pretendard', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(180deg, #2E8B57 0%, #98FB98 100%);
-      color: #fff;
-      text-align: center;
-    }
-    header {
-      background: rgba(0,0,0,0.6);
-      padding: 1.5em 0;
-    }
-    h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-    main {
-      padding: 2em;
-    }
-    section {
-      margin-bottom: 2.5em;
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 1.5em;
-    }
-    button, .fake-button {
-      background: #FFD700;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      padding: 1em 2em;
-      font-size: 1.2em;
-      cursor: pointer;
-    }
-    .fake-button {
-      display: inline-block;
-      background: #ccc;
-      color: #000;
-      margin-top: 1em;
-      text-decoration: none;
-    }
-    footer {
-      background: rgba(0,0,0,0.5);
-      padding: 1em;
-      font-size: 0.9em;
-    }
-  </style>
+  <title>20기 골프대회</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>20기 골프대회 2026</h1>
-    <p>12월 23일까지 스크린골프 1판! 동문 단합을 위한 첫걸음</p>
+    <h1>20기 골프대회</h1>
+    <p>동문 화합과 친목을 위한 골프대회</p>
   </header>
+
+  <nav>
+    <a href="index.html" class="active">홈</a>
+    <a href="login.html">로그인</a>
+    <a href="tournament.html">대회신청</a>
+    <a href="about.html">운영진소개</a>
+  </nav>
+
   <main>
-    <section>
-      <h2>참가 등록</h2>
-      <p>이름, 졸업연도, 스크린골프 점수 사진을 업로드하세요.</p>
-      <a href="#" class="fake-button">참가 등록 (준비 중)</a>
-    </section><section>
-  <h2>장학금 기부</h2>
-  <p>후배들을 위한 장학금에 동참하세요.<br>현재는 이미지로 표시되며, 추후 간편결제 모듈이 연결됩니다.</p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/QR_code_example.svg/300px-QR_code_example.svg.png" alt="결제 QR" width="150">
-  <p>※ QR 결제 모듈 연결 예정 (간편이체, 카드결제 등)</p>
-</section>
+    <div class="container">
+      <!-- 메인 배너 -->
+      <section style="text-align: center; padding: 3em 2em;">
+        <h2 style="font-size: 2.5em; margin-bottom: 0.5em;">🏌️ 20기 동문 골프대회</h2>
+        <p style="font-size: 1.3em; margin-bottom: 2em;">함께 만드는 즐거운 추억, 따뜻한 만남</p>
+        <a href="tournament.html" class="btn" style="font-size: 1.3em; padding: 1.2em 2.5em;">
+          대회 신청하기
+        </a>
+      </section>
 
-<section>
-  <h2>장학금 이야기</h2>
-  <p>20기 동문들의 따뜻한 손길이 만들어낸 변화</p>
-  <div style="text-align:left; background:rgba(255,255,255,0.2); padding:1em; border-radius:10px;">
-    <h3>📖 학생 A의 이야기</h3>
-    <p>"장학금 덕분에 대학 등록금을 해결할 수 있었고,<br>이제는 후배들에게 꿈을 전하는 사람이 되었습니다."</p>
-    <h3>🌱 학생 B의 이야기</h3>
-    <p>"아르바이트 대신 공부에 집중할 수 있게 되어<br>교사라는 꿈을 이룰 수 있었습니다."</p>
-  </div>
-</section>
+      <!-- 대회 소개 -->
+      <section>
+        <h2>대회 소개</h2>
+        <div style="text-align: left; line-height: 1.8;">
+          <p style="font-size: 1.1em; margin-bottom: 1em;">
+            20기 동문 골프대회는 졸업 후 각자의 길을 걷고 있는 동문들이 다시 모여
+            건강한 스포츠를 즐기며 친목을 다지는 특별한 행사입니다.
+          </p>
+          <p style="margin-bottom: 1em;">
+            스크린골프와 야외골프로 진행되는 대회에서 초보부터 상급자까지
+            모두가 편하게 참여할 수 있습니다.
+          </p>
+          <p>
+            골프 실력보다 중요한 것은 함께하는 즐거움입니다.
+            많은 동문 여러분의 참여를 기다립니다!
+          </p>
+        </div>
+      </section>
 
-<section>
-  <h2>대회 공지</h2>
-  <p>📅 일정: 2026년 12월 23일까지<br>📍 장소: 전국 스크린골프 매장 어디서나 가능<br>🏆 참여 인증: 점수 스크린샷 업로드 예정</p>
-</section>
+      <!-- 대회 안내 -->
+      <section>
+        <h2>대회 안내</h2>
+        <div style="background: rgba(255, 255, 255, 0.2); padding: 2em; border-radius: 10px; text-align: left;">
+          <div style="margin-bottom: 1.5em;">
+            <h3 style="color: var(--accent-color); margin-bottom: 0.5em;">📅 대회 일정</h3>
+            <p>• 봄 대회: 2026년 4월 (스크린골프)</p>
+            <p>• 여름 대회: 2026년 7월 (야외골프)</p>
+            <p>• 겨울 대회: 2026년 12월 (스크린골프)</p>
+          </div>
 
+          <div style="margin-bottom: 1.5em;">
+            <h3 style="color: var(--accent-color); margin-bottom: 0.5em;">📍 장소</h3>
+            <p>• 스크린골프: 전국 스크린골프장 어디서나</p>
+            <p>• 야외골프: 서울 인근 골프장 (추후 공지)</p>
+          </div>
+
+          <div style="margin-bottom: 1.5em;">
+            <h3 style="color: var(--accent-color); margin-bottom: 0.5em;">💰 참가비</h3>
+            <p>• 스크린골프: 50,000원</p>
+            <p>• 야외골프: 120,000원 (그린피, 식사 포함)</p>
+          </div>
+
+          <div>
+            <h3 style="color: var(--accent-color); margin-bottom: 0.5em;">🏆 시상</h3>
+            <p>• 우승, 준우승, 3위</p>
+            <p>• 베스트 드레서상, 행운상 등 다양한 상품</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참가 방법 -->
+      <section>
+        <h2>참가 방법</h2>
+        <div class="card-grid">
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 0.5em;">1️⃣</div>
+            <h3>회원가입</h3>
+            <p>Google 또는 네이버 계정으로 간편하게 가입하고 기수를 입력하세요</p>
+          </div>
+
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 0.5em;">2️⃣</div>
+            <h3>대회 선택</h3>
+            <p>참가하고 싶은 대회를 선택하고 신청 버튼을 클릭하세요</p>
+          </div>
+
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 0.5em;">3️⃣</div>
+            <h3>결제</h3>
+            <p>카드결제 또는 계좌이체로 참가비를 결제하세요</p>
+          </div>
+
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 0.5em;">4️⃣</div>
+            <h3>확정</h3>
+            <p>신청 확정 메일을 받고 대회 당일 참가하세요!</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2em;">
+          <a href="login.html" class="btn">지금 시작하기</a>
+        </div>
+      </section>
+
+      <!-- 장학금 이야기 -->
+      <section>
+        <h2>장학금 사업</h2>
+        <p class="text-center">대회 수익금의 일부는 후배들을 위한 장학금으로 사용됩니다</p>
+
+        <div style="background: rgba(255, 255, 255, 0.2); padding: 2em; border-radius: 10px; margin: 2em 0; text-align: left;">
+          <h3>📖 학생 A의 이야기</h3>
+          <p style="margin: 1em 0; line-height: 1.6;">
+            "장학금 덕분에 대학 등록금을 해결할 수 있었고,
+            이제는 후배들에게 꿈을 전하는 사람이 되었습니다."
+          </p>
+
+          <h3 style="margin-top: 2em;">🌱 학생 B의 이야기</h3>
+          <p style="margin: 1em 0; line-height: 1.6;">
+            "아르바이트 대신 공부에 집중할 수 있게 되어
+            교사라는 꿈을 이룰 수 있었습니다."
+          </p>
+        </div>
+
+        <div style="text-align: center; padding: 1.5em; background: rgba(255, 215, 0, 0.2); border-radius: 10px;">
+          <p style="font-size: 1.1em; margin-bottom: 0.5em;">
+            <strong>2025년까지 총 50명의 학생에게 장학금 지급</strong>
+          </p>
+          <p style="opacity: 0.9;">
+            여러분의 참여가 후배들의 꿈을 응원합니다
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="text-align: center; padding: 3em 2em; background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3)); border: 2px solid var(--accent-color);">
+        <h2 style="font-size: 2em; margin-bottom: 1em;">함께 만드는 20기의 전통</h2>
+        <p style="font-size: 1.2em; margin-bottom: 2em;">
+          지금 바로 대회에 참가하고 동문들과 즐거운 시간을 보내세요!
+        </p>
+        <a href="tournament.html" class="btn" style="font-size: 1.2em; padding: 1.2em 2.5em;">
+          대회 신청하기 →
+        </a>
+      </section>
+    </div>
   </main>
+
   <footer>
     <p>© 2026 고교 20기 골프대회 추진위원회</p>
+    <p>문의: golf20@example.com | 카카오톡: 20기 골프대회</p>
   </footer>
 </body>
 </html>

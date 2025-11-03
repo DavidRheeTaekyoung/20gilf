@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결제 - 20기 골프대회</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>20기 골프대회</h1>
+    <p>참가비 결제</p>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="login.html">로그인</a>
+    <a href="tournament.html">대회신청</a>
+    <a href="about.html">운영진소개</a>
+  </nav>
+
+  <main>
+    <div class="container">
+      <!-- 알림 -->
+      <div id="alert" class="alert"></div>
+
+      <!-- 결제 정보 -->
+      <section>
+        <h2>결제 정보</h2>
+
+        <div id="paymentInfo" style="background: rgba(255, 255, 255, 0.2); padding: 1.5em; border-radius: 10px; margin: 1.5em 0;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
+            <span><strong>대회명:</strong></span>
+            <span id="tournamentTitle">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
+            <span><strong>신청자:</strong></span>
+            <span id="userName">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
+            <span><strong>기수:</strong></span>
+            <span><span id="userClass">-</span>기</span>
+          </div>
+          <hr style="border: 1px solid rgba(255, 255, 255, 0.3); margin: 1em 0;">
+          <div style="display: flex; justify-content: space-between; font-size: 1.3em;">
+            <span><strong>결제 금액:</strong></span>
+            <span style="color: var(--accent-color);"><strong id="paymentAmount">0</strong>원</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 결제 방법 선택 -->
+      <section>
+        <h2>결제 방법 선택</h2>
+
+        <div style="max-width: 500px; margin: 2em auto;">
+          <!-- 토스페이먼츠 결제 -->
+          <button id="tossPaymentBtn" class="btn" style="width: 100%; margin-bottom: 1em; font-size: 1.1em;">
+            💳 카드 결제 (토스페이먼츠)
+          </button>
+
+          <!-- 계좌이체 안내 -->
+          <button id="bankTransferBtn" class="btn btn-secondary" style="width: 100%; margin-bottom: 1em;">
+            🏦 계좌이체
+          </button>
+
+          <!-- 계좌이체 정보 (숨김) -->
+          <div id="bankTransferInfo" class="hidden" style="background: rgba(255, 255, 255, 0.2); padding: 1.5em; border-radius: 10px; margin-top: 1em; text-align: left;">
+            <h3>계좌이체 안내</h3>
+            <p style="margin: 1em 0;">
+              <strong>입금 계좌:</strong><br>
+              국민은행 123-456-789012<br>
+              예금주: 20기 골프대회 추진위원회
+            </p>
+            <p style="margin: 1em 0;">
+              <strong>입금자명:</strong> [기수]이름 (예: 20윤영)
+            </p>
+            <p style="background: rgba(255, 215, 0, 0.2); padding: 1em; border-radius: 8px; margin: 1em 0;">
+              ⚠️ 입금 후 아래 버튼을 눌러 입금확인을 요청해주세요.
+            </p>
+            <button id="confirmTransferBtn" class="btn" style="width: 100%;">
+              입금 완료 확인 요청
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 결제 완료 섹션 (숨김) -->
+      <section id="paymentCompleteSection" class="hidden">
+        <div style="text-align: center; padding: 2em;">
+          <div style="font-size: 3em; margin-bottom: 0.5em;">✅</div>
+          <h2>결제가 완료되었습니다!</h2>
+          <p style="margin: 1.5em 0;">대회 신청이 확정되었습니다.</p>
+          <p>대회 일정과 상세 안내는 이메일로 발송됩니다.</p>
+
+          <div style="margin-top: 2em;">
+            <a href="tournament.html" class="btn">대회 목록으로</a>
+            <a href="index.html" class="btn btn-secondary" style="margin-left: 1em;">홈으로</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 고교 20기 골프대회 추진위원회</p>
+    <p>문의: golf20@example.com</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+  <!-- 토스페이먼츠 SDK -->
+  <script src="https://js.tosspayments.com/v1/payment"></script>
+
+  <!-- Firebase 설정 -->
+  <script src="js/firebase-config.js"></script>
+
+  <!-- 인증 로직 -->
+  <script src="js/auth.js"></script>
+
+  <!-- 결제 로직 -->
+  <script src="js/payment.js"></script>
+</body>
+</html>
