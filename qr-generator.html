@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR 코드 생성기 - 20기 골프대회</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>20기 골프대회</h1>
+    <p>QR 코드 생성기</p>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="login.html">로그인</a>
+    <a href="tournament.html">대회신청</a>
+    <a href="about.html">운영진소개</a>
+  </nav>
+
+  <main>
+    <div class="container">
+      <section>
+        <h2>웹사이트 QR 코드</h2>
+        <p class="text-center">아래 QR 코드를 스캔하면 웹사이트로 바로 이동합니다</p>
+
+        <div style="text-align: center; margin: 2em 0;">
+          <div id="qrcode" style="display: inline-block; padding: 2em; background: white; border-radius: 10px;"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2em;">
+          <p style="font-size: 1.1em; margin-bottom: 1em;">
+            <strong>현재 URL:</strong><br>
+            <span id="currentUrl" style="word-break: break-all; color: var(--accent-color);"></span>
+          </p>
+          <button id="downloadBtn" class="btn">QR 코드 다운로드</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>QR 코드 사용 방법</h2>
+        <div style="text-align: left; line-height: 1.8;">
+          <ol style="padding-left: 1.5em;">
+            <li style="margin-bottom: 1em;">
+              <strong>다운로드:</strong> 위의 "QR 코드 다운로드" 버튼을 클릭하여 이미지를 저장하세요.
+            </li>
+            <li style="margin-bottom: 1em;">
+              <strong>인쇄:</strong> QR 코드를 포스터, 전단지, 명함 등에 인쇄하세요.
+            </li>
+            <li style="margin-bottom: 1em;">
+              <strong>공유:</strong> 카카오톡, 이메일 등으로 QR 코드 이미지를 공유하세요.
+            </li>
+            <li style="margin-bottom: 1em;">
+              <strong>스캔:</strong> 스마트폰 카메라나 QR 코드 리더 앱으로 스캔하면 웹사이트로 바로 이동합니다.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2>맞춤 QR 코드 생성</h2>
+        <p class="text-center">특정 페이지로 바로 연결되는 QR 코드를 생성하세요</p>
+
+        <div style="max-width: 500px; margin: 2em auto;">
+          <div class="form-group">
+            <label for="pageSelect">연결할 페이지:</label>
+            <select id="pageSelect">
+              <option value="">홈페이지 (메인)</option>
+              <option value="login.html">로그인</option>
+              <option value="tournament.html">대회 신청</option>
+              <option value="about.html">운영진 소개</option>
+            </select>
+          </div>
+
+          <button id="generateBtn" class="btn" style="width: 100%;">맞춤 QR 코드 생성</button>
+
+          <div id="customQrSection" class="hidden" style="margin-top: 2em; text-align: center;">
+            <div id="customQrcode" style="display: inline-block; padding: 2em; background: white; border-radius: 10px;"></div>
+            <p style="margin-top: 1em;">
+              <strong>URL:</strong><br>
+              <span id="customUrl" style="word-break: break-all; color: var(--accent-color);"></span>
+            </p>
+            <button id="downloadCustomBtn" class="btn" style="margin-top: 1em;">다운로드</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 고교 20기 골프대회 추진위원회</p>
+    <p>문의: golf20@example.com</p>
+  </footer>
+
+  <!-- QRCode.js 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <script>
+    // 현재 URL 가져오기
+    const baseUrl = window.location.origin + window.location.pathname.replace('qr-generator.html', '');
+    const currentUrl = baseUrl + 'index.html';
+
+    // 현재 URL 표시
+    document.getElementById('currentUrl').textContent = currentUrl;
+
+    // 메인 QR 코드 생성
+    const qrcodeDiv = document.getElementById('qrcode');
+    QRCode.toCanvas(currentUrl, {
+      width: 300,
+      margin: 2,
+      color: {
+        dark: '#000000',
+        light: '#FFFFFF'
+      }
+    }, function (err, canvas) {
+      if (err) {
+        console.error(err);
+        qrcodeDiv.innerHTML = '<p style="color: red;">QR 코드 생성 실패</p>';
+        return;
+      }
+      qrcodeDiv.appendChild(canvas);
+    });
+
+    // QR 코드 다운로드
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      const canvas = qrcodeDiv.querySelector('canvas');
+      if (canvas) {
+        const link = document.createElement('a');
+        link.download = '20기골프대회_QR코드.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      }
+    });
+
+    // 맞춤 QR 코드 생성
+    document.getElementById('generateBtn').addEventListener('click', function() {
+      const page = document.getElementById('pageSelect').value;
+      const customUrl = baseUrl + page;
+
+      document.getElementById('customUrl').textContent = customUrl;
+
+      const customQrDiv = document.getElementById('customQrcode');
+      customQrDiv.innerHTML = '';
+
+      QRCode.toCanvas(customUrl, {
+        width: 300,
+        margin: 2,
+        color: {
+          dark: '#000000',
+          light: '#FFFFFF'
+        }
+      }, function (err, canvas) {
+        if (err) {
+          console.error(err);
+          customQrDiv.innerHTML = '<p style="color: red;">QR 코드 생성 실패</p>';
+          return;
+        }
+        customQrDiv.appendChild(canvas);
+        document.getElementById('customQrSection').classList.remove('hidden');
+      });
+    });
+
+    // 맞춤 QR 코드 다운로드
+    document.getElementById('downloadCustomBtn').addEventListener('click', function() {
+      const canvas = document.getElementById('customQrcode').querySelector('canvas');
+      if (canvas) {
+        const page = document.getElementById('pageSelect').value || 'index';
+        const pageName = page.replace('.html', '');
+        const link = document.createElement('a');
+        link.download = `20기골프대회_QR_${pageName}.png`;
+        link.href = canvas.toDataURL();
+        link.click();
+      }
+    });
+  </script>
+</body>
+</html>
