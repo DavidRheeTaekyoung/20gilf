@@ -1,14 +1,14 @@
 // Firebase 설정
-// 실제 사용시 Firebase Console에서 프로젝트 생성 후 설정값을 입력하세요
-// https://console.firebase.google.com/
+// Firebase Console에서 가져온 실제 설정값
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAq_81SiupjB9JUhezUap_71oc5WQKYwjA",
+  authDomain: "prodigen-20golf.firebaseapp.com",
+  projectId: "prodigen-20golf",
+  storageBucket: "prodigen-20golf.firebasestorage.app",
+  messagingSenderId: "875394593973",
+  appId: "1:875394593973:web:c8da11595b7b0df514bafc",
+  measurementId: "G-32SMLDB8GD"
 };
 
 // Firebase 초기화
